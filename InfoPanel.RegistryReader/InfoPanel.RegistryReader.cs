@@ -1,6 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using System.Reflection;
-using System.Runtime.InteropServices;
+﻿using System.Reflection;
 using InfoPanel.Plugins;
 using IniParser;
 using IniParser.Model;
@@ -79,6 +77,7 @@ namespace InfoPanel.RegistryReader
                 parser.WriteFile(_configFilePath, config);
 
                 _regValueString01Path = config["RegistryReader Plugin"]["String01Path"];
+                _regValueString02Path = config["RegistryReader Plugin"]["String02Path"];
                 _regValueDWord01Path = config["RegistryReader Plugin"]["DWord01Path"];
             }
             else
@@ -98,7 +97,7 @@ namespace InfoPanel.RegistryReader
                     }
                     else
                     {
-                        config["RegistryReader Plugin"]["String01Path"] = "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProductName";
+                        config["RegistryReader Plugin"]["String01Path"] = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProductName";
                         parser.WriteFile(_configFilePath, config);
                     }
 
@@ -148,7 +147,7 @@ namespace InfoPanel.RegistryReader
                     }
                     else
                     {
-                        config["RegistryReader Plugin"]["DWord01Path"] = "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\InstallDate";
+                        config["RegistryReader Plugin"]["DWord01Path"] = "";
                         parser.WriteFile(_configFilePath, config);
                     }
 

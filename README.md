@@ -37,4 +37,3 @@ Follow these steps to get the ping plugin working with InfoPanel:
   DWord03Path = 
   DWord04Path = 
   DWord05Path = 
-```
